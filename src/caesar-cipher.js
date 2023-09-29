@@ -9,9 +9,9 @@ const table = (char, shift) => {
 };
 
 export const caesarCipher = (str, shift) => {
-  if (isNaN(shift) || typeof shift !== 'number') throw new Error(); // handle shift not number
+  if (isNaN(shift) || typeof shift !== 'number') throw new Error('Invalid shift input'); // handle shift not number
   if (!str) return ''; // handle falsey
-  if (typeof str !== 'string') throw new Error(); // handle truthy but not string
+  if (typeof str !== 'string') throw new Error('Input is not string'); // handle truthy but not string
   const result = str.split('').reduce((total, current) => {
     const isLowerCase = current === current.toLowerCase();
     current = table(current.toLowerCase(), shift);

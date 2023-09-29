@@ -1,8 +1,8 @@
 export const calculator = {
   convert(num) {
-    if (num === null) throw new Error();
+    if (num === null) throw new Error('Input cannot be null');
     num = Number(num);
-    if (isNaN(num)) throw new Error();
+    if (isNaN(num)) throw new Error('Input is not a number');
     return num;
   },
   add(num0, num1) {
